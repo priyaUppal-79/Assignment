@@ -1,0 +1,173 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Swagger Documentation for the CRUD operations",
+        "title": "CRUD APIs"
+    },
+    "schemes": ["http"],
+    "host": "localhost:8000",
+    "basePath": "",
+    "paths" : {
+        "/insert" : {
+            "get" : {
+                "summary" : "Insert the Employee Details",
+                "description": "",
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "name",
+                    "in": "query",
+                    "description": "Employee Name",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "name": "des",
+                    "in": "query",
+                    "description": "Employee Designation",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "name": "sal",
+                    "in": "query",
+                    "description": "Employee Salary",
+                    "type": "integer",
+                    "required": true
+                }],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "type": "string",
+                            "items": {
+                                "$ref": "#/definitions/insertResponse"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/read" : {
+            "get" : {
+                "summary" : "Read the Employee Details",
+                "description": "",
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "id",
+                    "in": "query",
+                    "description": "Employee Id",
+                    "type": "string",
+                    "required": false
+                }],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/readResponse"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/update" : {
+            "get" : {
+                "summary" : "Update the Employee Details",
+                "description": "",
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "name",
+                    "in": "query",
+                    "description": "Employee Name",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "name": "des",
+                    "in": "query",
+                    "description": "Employee Designation",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "name": "sal",
+                    "in": "query",
+                    "description": "Employee Salary",
+                    "type": "integer",
+                    "required": true
+                },
+                {
+                    "name": "id",
+                    "in": "query",
+                    "description": "Employee Id",
+                    "type": "integer",
+                    "required": true
+                }],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "type": "string",
+                            "items": {
+                                "$ref": "#/definitions/insertResponse"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/delete" : {
+            "get" : {
+                "summary" : "Delete the Employee Details",
+                "description": "",
+                "produces": ["application/json"],
+                "parameters": [
+                {
+                    "name": "id",
+                    "in": "query",
+                    "description": "Employee Id",
+                    "type": "integer",
+                    "required": true
+                }],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "type": "string",
+                            "items": {
+                                "$ref": "#/definitions/insertResponse"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }, 
+    "definitions": {
+        "insertResponse": {
+            "type": "string"
+        },
+        "readResponse": {
+            "type": "object",
+            "properties": {
+                "emp_id": {
+                    "type": "integer"
+                },
+                "emp_name": {
+                    "type": "string"
+                },
+                "emp_designation": {
+                    "type": "string"
+                },
+                "emp_salary": {
+                    "type": "integer"
+                },
+                "is_active": {
+                    "type": "integer"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "ineuron",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx jest",
+    "start": "nodemon server.js",
+    "coverage": "nyc  --reporter=lcov --reporter=text-lcov npm test",
+    "systematize": "npm install && npm run test",
+    "test-jest-watch": " npx jest --watchAll "
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql": "^2.15.0",
+    "nodemon": "^2.0.20",
+    "nyc": "^15.1.0",
+    "swagger-ui-express": "^4.6.0"
+  },
+  "devDependencies": {
+    "jest": "^25.0.0",
+    "supertest": "^6.3.3"
+  }
+}
